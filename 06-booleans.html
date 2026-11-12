@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans</title>
+</head>
+<body>
+    <script>
+        true 
+        false
+
+        console.log(3 < 5);
+        console.log(3 > 5);
+
+        console.log(typeof true);
+
+        console.log(5 == '5.00') // true
+        console.log(5 === '5.00') // false // Same goes for !==
+
+        console.log(5 > 9 - 9);
+
+        if(false){
+            console.log('Hello');
+        } else {
+            console.log('else');
+        }
+
+        const age = 118;
+
+        if(age >= 18){
+            console.log(`You can Drive.`);
+        } else if( age < 18 && age >= 15 ){
+            console.log(`Close to drive but not yet.`);
+        }else if(age >= 100){
+            console.log(`Ab bas kar de kitna jiyega`);
+        } else{
+            console.log(`You can't drive.`);
+        }
+
+        const message = (20>18) && 'Can Vote';
+        console.log(message);
+
+        const currency = undefined || 'USD';
+        console.log(currency);
+
+
+    </script>
+</body>
+</html>
