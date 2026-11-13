@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        /*const product = {
+            name: 'socks',
+            price: 1090
+        };
+
+        console.log(product);
+        console.log(product.name);
+        console.log(product.price);
+
+        product.name = 'sunglass';
+        console.log(product);
+
+        product.newProperty = true;
+        console.log(product);
+
+        delete product.newProperty;
+        console.log(product);*/
+
+        const product2 = {
+            name: 'shirt',
+            'delivery-time': '1 day', //['deleivery-time'],
+            rating: {
+                stars: 4.5,
+                count: 87
+            },
+            fun: function function1(){
+                console.log('Function inside object'); //Method
+            }
+        };  
+
+        console.log(product2);
+        console.log(product2.name);
+        console.log(product2['delivery-time']);
+        console.log(product2.rating);
+        console.log(product2.rating.count);
+        product2.fun();
+
+        console.log(typeof console);
+        console.log(typeof console.log);
+
+        console.log(JSON.stringify(product2));
+
+        const jsonString = JSON.stringify(product2)
+
+        console.log(JSON.parse(JSON.stringify(product2)));
+        console.log(JSON.parse(jsonString));
+
+
+        console.log('Hello'.length); //Strings also have properties
+        console.log('hello'.toUpperCase()); //and methods
+        //This is due to the auto-boxing of string(primitive data type)
+
+        const object1 = {
+            message: 'Hello'
+        };
+        console.log(object1)
+
+        const object2 = object1; //This is copy by reference
+        console.log(object2);    //Both objects points to the same location
+
+        object2.message = 'Good job!'; //Even the object is const we can change the values 
+        console.log(object1);
+
+        const object3 = {
+            message: 'Good job!'
+        };
+
+        console.log(object1 === object3); //False, cz they references to different objects
+        console.log(object1 === object2); //True, cz they references to same objects
+
+        object4 = {
+            message: 'Good job!',
+            price: 999
+        };
+
+        // const message = object4.message; //Destructuring
+        const {message, price} = object4 //Same as upper line
+        console.log(message);
+        console.log(price);
+
+        const object5 = {
+            // message: message
+            message, // Called short hand property
+
+            // method: function function2(){
+            //     console.log('method');
+            // }
+            method(){
+                console.log('method');// Called short hand method
+            }
+        };
+
+        console.log(object5);
+        object5.method();
+
+
+    </script>
+</body>
+</html>
