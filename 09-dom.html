@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button class="js-firstBtn">hello</button>
+    <button class="js-secondBtn">second btn</button>
+
+    <script>
+
+        // // Property of document.body object
+        // // .innerHTML give and take the string bcz it is a property
+        // // But .body gives and take the actual code bcz it is an object in the memory
+        // document.body.innerHTML = 'hello'; 
+        // console.log(typeof document.body) // Object
+
+        // // Property of document object
+        // document.title = 'Good job!'; 
+        
+        
+
+
+        // // Print and change the title
+        // console.log(document.title);
+        // document.title = 'changed';
+
+        // // Gives the code of body after the complete code runs
+        // console.log(document.body);
+        
+        // // Clears everything and put string 'changed'
+        // document.body.innerHTML = 'changed';
+        // console.log(document.body);
+        
+        // //prints the complete code of body while it is executing
+        // console.log(document.body.innerHTML);
+
+        // // Clears the complete body and Add a button name of Good Job!
+        // document.body.innerHTML = '<button> Good Job! </button>';
+        // console.log(document.body.innerHTML);
+        
+
+
+        
+        // Access any element of html. only first btn name print
+        console.log(document.querySelector('button').innerHTML);
+
+        // Only first btn changed
+        document.querySelector('button')
+            .innerHTML = 'yes changed';
+        
+        // Access element by class(using .)
+        document.querySelector('.js-secondBtn').innerHTML = 'changed';
+
+        // Save Button (code) inside a var
+        const button1Element = document.querySelector('.js-firstBtn');
+
+        // Gives the code of button 
+        console.log(button1Element);
+        
+
+    </script>
+</body>
+</html>
