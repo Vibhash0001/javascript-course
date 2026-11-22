@@ -8,6 +8,36 @@ updateScoreElement();
 
 let computerMove = '';
 
+document.querySelector('.js-rock-btn')
+    .addEventListener('click', () => {
+        playGame('rock'); //If we use fn directly it will give the undefined value 
+    }
+);
+
+document.querySelector('.js-paper-btn')
+    .addEventListener('click', () => {
+        playGame('paper'); //If we use fn directly it will give the undefined value 
+    }
+);
+
+document.querySelector('.js-scissors-btn')
+    .addEventListener('click', () => {
+        playGame('scissors'); //If we use fn directly it will give the undefined value 
+    }
+);
+
+document.body.addEventListener('keydown', (event) => {
+    if(event.key === 'r' || event.key === 'R'){
+        console.log(event.key);
+        playGame('rock');
+    } else if(event.key === 'p' || event.key === 'P'){
+        console.log(event.key);
+        playGame('paper');
+    } else if(event.key === 's' || event.key === 'S'){
+        console.log(event.key);
+        playGame('');
+    }
+});
 
 // if(!score){
 //     score = {
@@ -24,6 +54,29 @@ let computerMove = '';
 // };
 
 // console.log(JSON.parse(localStorage.getItem('score')));
+let flag = false;
+let intervalId = null;
+
+function autoPlay(){
+    if(flag == false){
+        flag = true;
+        console.log('Auto Play start');
+        document.querySelector('.js-autoplay-btn').innerHTML = 'Stop';
+        intervalId = setInterval(() => {
+            getComputerMove();
+            playerCompMove = computerMove; 
+            playGame(playerCompMove);
+        }, 1000); 
+
+    }
+    else if(flag == true){
+        flag = false;
+        clearInterval(intervalId);
+        document.querySelector('.js-autoplay-btn').innerHTML = 'Auto Play';
+        console.log('Auto Play Stop')
+    }
+
+}
 
 function getResultElement(result, playerMove, computerMove){
     document.querySelector('.js-result')
@@ -44,7 +97,7 @@ function getComputerMove(){
     } else if(randomNumber >= 2/3 && randomNumber <= 1/1){
         computerMove = 'scissors'
     }
-    console.log(computerMove);
+    console.log( 'Computer Move: ' + computerMove);
 }
 
 function playGame(playerMove){
@@ -94,6 +147,7 @@ function playGame(playerMove){
     getResultElement(result, playerMove, computerMove);
 
     updateScoreElement();
+    console.log('Player Move: ' + playerMove)
     console.log(result);
 
 //             alert(`You picked ${playerMove}, Computer picked ${computerMove}. ${result}

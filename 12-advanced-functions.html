@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functions</title>
+</head>
+<body>
+
+    <button class="js-btn">click</button>
+    <script>
+
+       console.log( [1, -3, 5].filter((value, index) => {
+            // if(value >= 0)
+            //     return true;
+            // else
+            //     return false;
+            return value >= 0;
+        }));
+
+        arr1 = [1, -1, -3, 4, 6];
+        const arr2 = arr1.filter((value, index) => {
+            return value >= 0;
+        });
+        console.log(arr2);
+
+        test = [1, 1, 3];
+        const test2 = test.map((value, index) => {
+            return value + 10;
+        });
+
+        console.log(test2);
+        
+        
+
+        /*
+        const buttonElement = document.querySelector('.js-btn');
+        const eventListener = () =>{
+            console.log('click');
+        };
+
+        buttonElement.addEventListener('click', eventListener);
+
+        buttonElement.removeEventListener('click', eventListener)
+
+        buttonElement.addEventListener('click', () =>{
+            console.log('click2');
+        });
+        */
+
+
+        /*
+        function greeting(){
+            console.log('Hello');
+        }
+        greeting();
+
+        const function1 = function(){ //Anonymous function
+            console.log('Hello2');
+        };
+
+        console.log(function1);
+        console.log(typeof (function1)); //function
+
+        function1();
+
+
+        const object1 ={
+            num: 2,
+            fun: function(){
+                console.log('Hello3');
+            }
+        };
+        object1.fun();
+
+
+        function display(param){
+            console.log(param);
+        }
+        display(2);
+
+
+        function run(param) {
+            param();
+        }
+
+        run(function(){
+            console.log('Hello4');
+        });
+        */
+
+        /*
+        setTimeout(function(){
+            console.log('timeout');
+            console.log('timeout2');
+        }, 3000); //Asyncronous code
+
+        console.log('Next line'); 
+
+
+        setInterval(function(){
+            console.log('Interval');
+        }, 3000);
+
+        console.log('next line 2');
+        */
+
+
+        /*
+        [
+            'make dinner',
+            'wash dishes',
+            'watch youtube'
+        ].forEach(function(vale, index) {
+            console.log(index);
+            console.log(vale);
+        });
+
+        const regularFunction = function(param, param2){
+            console.log('Hello from the regular function');
+            return 5;
+        };
+        regularFunction();
+
+        const arrowFunction = () => {
+            console.log('Hello from arrow function');
+            return 5;
+        };
+        arrowFunction();
+
+        const oneParam = param => { // If there is only one parameter then we can avoid the small bracket;
+            console.log(param + 1);
+        };
+        oneParam(2);
+
+        const oneLine = () => 2 + 3; //If there is one line only then we don't need curly bracket and return keyword;
+        console.log(oneLine());
+
+        const object2 = {
+            method: () =>{
+
+            },
+
+            method(){
+
+            }
+        };
+
+        */
+
+    </script>
+</body>
+</html>

@@ -41,7 +41,8 @@ body{
     background-color: transparent;
 }
 
-.reset-btn{
+.reset-btn,
+.autoplay-btn{
     padding: 10px 30px;
     border-radius: 5px;
 }
