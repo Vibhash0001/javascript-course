@@ -3,6 +3,7 @@ import {products} from '../../data/products.js'; //Named export
 import formatCurrency from '../utils/money.js';//Default export
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
 import {deliveryOptions} from '../../data/deliveryOption.js';
+import { renderPaymentSummary } from './paymentSummary.js';
 
 export function renderOrderSummary(){
   let cartSummaryHtml = '';
@@ -133,6 +134,7 @@ export function renderOrderSummary(){
       const {productId, deliveryOptionId} = element.dataset;
       updateDeliveryOption(productId, deliveryOptionId);
       renderOrderSummary();
+      renderPaymentSummary();
     });
   });
 }
