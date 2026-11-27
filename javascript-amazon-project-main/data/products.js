@@ -47,6 +47,36 @@ class Clothing extends Product {
   }
 };
 
+/*
+const date = new Date();
+console.log(date);
+console.log(date.toLocaleTimeString());
+*/
+
+/*
+console.log(this);
+const object2 ={
+  a: 2,
+  b: this.a // object2 isn't created yet
+};
+*/
+
+/*
+function logThis(){
+  console.log(this);
+}
+logThis();
+logThis.call('Hello'); // 1st param is value of this
+
+const object3 = {
+  method: () => {
+    console.log(this); // Here 'this' is pointing towards the value of 'this' outside the arrow function
+  }
+};
+object3.method();
+*/
+
+
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -709,9 +739,8 @@ export const products = [
 ].map((productDetails) => {
   if(productDetails.type === 'clothing'){
     return new Clothing(productDetails);
-  } else{
+  }
   return new Product(productDetails);
-}
 });
 
 
