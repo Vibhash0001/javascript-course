@@ -1,15 +1,15 @@
 class Cart {
     cartItems = undefined;
-    localStorageKey = undefined;
+    #localStorageKey = undefined;
 
     constructor(localStorageKey){
-        this.localStorageKey = localStorageKey;
-        this.loadFromStorage();
+        this.#localStorageKey = localStorageKey;
+        this.#loadFromStorage();
     };
 
-    loadFromStorage(){
+    #loadFromStorage(){
 
-        this.cartItems = JSON.parse(localStorage.getItem(this.localStorageKey));
+        this.cartItems = JSON.parse(localStorage.getItem(this.#localStorageKey));
 
         if(!this.cartItems) {
             this.cartItems = [
@@ -89,6 +89,8 @@ const businessCart = new Cart('cart-business');
 
 // cart.loadFromStorage();
 // businessCart.loadFromStorage();
+
+
 
 console.log(cart);
 console.log(businessCart);
